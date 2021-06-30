@@ -1,1 +1,1 @@
-# Coding_Practice
+# Coding_Solutions
