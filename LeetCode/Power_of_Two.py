@@ -35,14 +35,14 @@ Follow up: Could you solve it without loops/recursion?
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
         if n>0 and (n & (n-1))==0:
-            return True
+		return True
         return False
 
 # Method 2) Recursion
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
         if n==1:
-			return True
+		return True
         elif n%2!=0 and n>0:
-			return False
-		return self.isPowerofTwo(n/2)
+		return False
+	return self.isPowerofTwo(n/2)
