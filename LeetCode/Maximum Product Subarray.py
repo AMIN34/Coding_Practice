@@ -41,6 +41,8 @@ You have three choices to make at any position in array.
 3. Current element might be a starting position for maximum product sub array
 """
 
+# Solution
+# 1)
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         maxp=minp=res=nums[0]
@@ -49,4 +51,16 @@ class Solution:
             n=min(nums[i],maxp*nums[i],nums[i]*minp)
             maxp,minp=m,n
             res=max(maxp,res)
+        return res
+
+# 2) 
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        res=maxm=minm=nums[0]
+        for i in range(1,len(nums)):
+            if nums[i]<0:
+                maxm,minm=minm,maxm
+            maxm=max(maxm*nums[i],nums[i])
+            minm=min(minm*nums[i],nums[i])
+            res=max(res,maxm)
         return res
